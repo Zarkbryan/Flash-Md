@@ -1,16 +1,15 @@
-# 🚀 FLASH-MD-V2: The Ultimate WhatsApp Bot
+# 🚀 FLASH-MD-V3 ⚡: The Ultimate WhatsApp Bot
 
 <p align="center">
   <img src="https://files.catbox.moe/c2jdkw.jpg" alt="FLASH-MD-V2 Banner" width="600"/>
 </p>
 
-**FLASH-MD-V2** is a powerful, fully customizable WhatsApp bot built with **Node.js** and the **WhatsApp Web API**. Automate tasks, manage groups, and enhance your WhatsApp experience with ease.
+**FLASH-MD-V3** is a powerful, fully customizable WhatsApp bot built with **Node.js** and the **WhatsApp Web API**. Automate tasks, manage groups, and enhance your WhatsApp experience with ease.
 ## CONNECT TO WHATSAPP:
 - **STAR REPO AND THEN** [FORK IT](https://github.com/franceking1/Flash-Md-V2/fork) 
-- **GET SESSION ID USING** [FLASH-MD SESSIONS](https://fixed-sessions.onrender.com) 
+- **GET SESSION ID USING** [FLASH-MD SESSIONS](https://flashv3sessions-766131578c33.herokuapp.com) 
 
-- [**TRY VERSION 3 HERE**](https://host-yqmf.onrender.com) Which doesn't require deployment. 
----
+
 ### 🚀 Deployment Platforms:
 
 | **Platform**        | **Instructions** |
@@ -67,7 +66,7 @@ npm start
 | [Use This Template](https://github.com/franceking1/FLASH-MD-V2/generate) | Create your own working bot easily. Eg, for hosting on render ‼️ |
 | [Fork This Repo](https://github.com/franceking1/FLASH-MD-V2/fork) | Show your support and boost visibility |
 
-> Every ⭐ star and fork makes a big difference — thank you for supporting **FLASH-MD-V2**!
+> Every ⭐ star and fork makes a big difference — thank you for supporting **FLASH-MD-V3**!
 
 > Powered by France King 
 ---
