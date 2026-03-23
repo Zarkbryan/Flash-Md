@@ -1,41 +1,43 @@
-require('dotenv').config();
+import dotenv from 'dotenv'
 
-function mapPresence(val) {
-    const mapping = {
-        typing: 'composing',
-        online: 'available',
-        recording: 'recording',
-        paused: 'paused',
-        offline: 'unavailable'
-    };
-    return mapping[val?.toLowerCase()?.trim()] || 'paused';
+dotenv.config({ path: '.env' })
+
+function parsePrefixes(prefixStr) {
+  if (!prefixStr || prefixStr.trim() === '' || prefixStr.toLowerCase() === 'none') return []
+  return prefixStr.split(',').map(p => p.trim()).filter(Boolean)
 }
 
-module.exports = {
-    prefixes: process.env.PREFIX
-        ? process.env.PREFIX.split(',').map(p => p.trim())
-        : [''],
+function parseBoolean(value) {
+  if (typeof value === 'string') {
+    return value.toLowerCase() === 'on' || value.toLowerCase() === 'true' || value === '1'
+  }
+  return Boolean(value)
+}
 
-    NUMBER: process.env.YOUR_NUMBER || '254742063632',
-    MODE: (process.env.MODE || 'private').toLowerCase().trim(),
-    WARN_LIMIT: process.env.WARNINGS || '3',
-    ON: process.env.YOUR_NAME || 'FLASH-MD',
-    ANTICALL: process.env.ANTICALL || 'on',
-    ADM: process.env.ANTIDELETE || 'on',
-    AR: process.env.AUTO_REACTION || 'off',
+function parseLids(lidStr) {
+  if (!lidStr || lidStr.trim() === '') return []
+  return lidStr.split(',').map(l => l.trim()).filter(Boolean)
+}
 
-    AUTO_VIEW_STATUS: process.env.AUTO_READ_STATUS === 'on',
-    AUTO_LIKE: process.env.AUTO_LIKE === 'on',
-    AUTO_READ_MESSAGES: process.env.AUTO_READ_DM === 'on',
-    HEROKU_API_KEY: process.env.HEROKU_API_KEY,
-    HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
-    sessionBase64: process.env.SESSION || '',
-    timezone: 'Africa/Nairobi',
+const CONFIG = {
+  MODE: process.env.MODE || 'private',
+  PREFIXES: parsePrefixes(process.env.PREFIXES),
+  PORT: parseInt(process.env.PORT) || 3000,
+  SESSION: process.env.SESSION || null,
+  TZ: process.env.TZ || 'Africa/Nairobi',
+  ANTICALL: parseBoolean(process.env.ANTICALL || 'off'),
+  ANTIDELETE: parseBoolean(process.env.ANTIDELETE || 'on'),
+  ANTIEDIT: parseBoolean(process.env.ANTIEDIT || 'on'),
+  AUTO_READ: parseBoolean(process.env.AUTO_READ || 'off'),
+  AUTO_VIEW: parseBoolean(process.env.AUTO_VIEW || 'on'),
+  AUTO_LIKE: parseBoolean(process.env.AUTO_LIKE || 'on'),
+  DM_PRESENCE: process.env.DM_PRESENCE || '',
+  GRP_PRESENCE: process.env.GRP_PRESENCE || '',
+  USER_LID: parseLids(process.env.USER_LID || ''),
+  OWNER_NUMBER: process.env.OWNER_NUMBER || '254742063632',
+  OWNER_NAME: process.env.OWNER_NAME || 'FLASH-MD Owner',
+  BOT_NAME: process.env.BOT_NAME || 'Flash-Md-V3',
+  BOT_VERSION: process.env.BOT_VERSION || '3.0.0'
+}
 
-    USER_LID: process.env.YOUR_LID, 
-
-    PRESENCE_DM: mapPresence(process.env.PRESENCE_DM || 'typing'),
-    PRESENCE_GROUP: mapPresence(process.env.PRESENCE_GROUP || 'recording'),
-
-    mapPresence
-};
+export default CONFIG
