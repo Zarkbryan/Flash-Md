@@ -1,105 +1,93 @@
 {
-  "name": "FLASH-MD-V2.5",
-  "description": "A WhatsApp bot powered by Baileys.",
-  "repository": "https://github.com/franceking1/FLASH-MD-V2",
-  "stack": "heroku-24",
-  "scripts": {
-    "postdeploy": "echo 'Deployment complete!'"
-  },
+  "name": "Flash-MD3",
+  "description": "WhatsApp Multi-Device bot powered by Baileys",
+  "repository": "https://github.com/franceking1/Flash-Md-V3",
+  "keywords": ["whatsapp", "baileys", "bot", "flash-md"],
   "env": {
+    "MODE": {
+      "description": "Bot mode (private or public)",
+      "value": "private",
+      "required": false
+    },
+    "PREFIXES": {
+      "description": "Command prefixes (comma separated)",
+      "value": ".",
+      "required": false
+    },
+    "OWNER_NUMBER": {
+      "description": "Owner phone number (no + or country code)",
+      "value": "254742063632",
+      "required": false
+    },
+    "OWNER_NAME": {
+      "description": "Your name goes here",
+      "value": "FLASH-MD",
+      "required": false
+    },
     "SESSION": {
-      "description": "Flash MD session string (required for WhatsApp login)",
+      "description": "put your FLASH-MD session here",
       "required": true
     },
-    "PREFIX": {
-      "description": "Comma-separated list of command prefixes (e.g. !, /)",
-      "required": false,
-      "value": "!"
-    },
-    "YOUR_NUMBER": {
-      "description": "Your WhatsApp number in international format (e.g. 254742063632)",
-      "required": false,
-      "value": "254742063632"
-    },
-    "MODE": {
-      "description": "Bot mode: 'private' or 'public'",
-      "required": false,
-      "value": "public"
-    },
-    "WARNINGS": {
-      "description": "Number of warnings before action is taken",
-      "required": false,
-      "value": "3"
-    },
-    "YOUR_NAME": {
-      "description": "Your name or bot owner name",
-      "required": false,
-      "value": "FLASH-MD"
+    "TZ": {
+      "description": "Timezone",
+      "value": "Africa/Nairobi",
+      "required": false
     },
     "ANTICALL": {
-      "description": "Block incoming calls (on/off)",
-      "required": false,
-      "value": "on"
+      "description": "Auto reject calls (on/off)",
+      "value": "off",
+      "required": false
     },
     "ANTIDELETE": {
-      "description": "Enable anti-delete for messages (on/off)",
-      "required": false,
-      "value": "on"
-    },
-    "AUTO_REACTION": {
-      "description": "Enable auto-reaction to messages (on/off)",
-      "required": false,
-      "value": "off"
-    },
-    "AUTO_READ_STATUS": {
-      "description": "Enable auto view of status updates (on/off)",
-      "required": false,
-      "value": "off"
-    },
-    "AUTO_READ_DM": {
-      "description": "Enable auto-read of direct messages (on/off)",
-      "required": false,
-      "value": "off"
-    },
-    "YOUR_LID": {
-      "description": "Your WhatsApp Lid (used for advanced features or admin control)",
-      "required": false,
-      "value": ""
-    },
-    "HEROKU_API_KEY": {
-      "description": "Your Heroku API key (for automatic restart or deploy)",
+      "description": "Detect deleted messages (on/off)",
+      "value": "on",
       "required": false
     },
-    "HEROKU_APP_NAME": {
-      "description": "Your Heroku app name",
+    "ANTIEDIT": {
+      "description": "Detect edited messages (on/off)",
+      "value": "on",
       "required": false
     },
-    "PRESENCE_DM": {
-      "description": "Bot presence status in DMs (typing, online, recording, paused, offline)",
-      "required": false,
-      "value": "typing"
+    "AUTO_READ": {
+      "description": "Auto read incoming messages (on/off)",
+      "value": "off",
+      "required": false
     },
-    "PRESENCE_GROUP": {
-      "description": "Bot presence status in groups (typing, online, recording, paused, offline)",
-      "required": false,
-      "value": "recording"
+    "AUTO_VIEW": {
+      "description": "Auto view status updates (on/off)",
+      "value": "on",
+      "required": false
     },
-    "timezone": {
-      "description": "Timezone for scheduling or logging",
-      "required": false,
-      "value": "Africa/Nairobi"
+    "AUTO_LIKE": {
+      "description": "Auto react to status updates (on/off)",
+      "value": "off",
+      "required": false
+    },
+    "DM_PRESENCE": {
+      "description": "Presence type for private chats (typing/recording/online)",
+      "value": "typing",
+      "required": false
+    },
+    "GRP_PRESENCE": {
+      "description": "Presence type for groups (typing/recording/online)",
+      "value": "recording",
+      "required": false
+    },
+    "USER_LID": {
+      "description": "Put your lid here",
+      "required": true
     }
   },
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "Basic"
+      "size": "basic"
     }
   },
-  "addons": [],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
     }
-  ]
+  ],
+  "stack": "heroku-24"
 }
