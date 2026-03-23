@@ -482,7 +482,7 @@ export const commands = [
   },
   {
     name: 'vv2',
-    aliases: [],
+    aliases: ["😂","❤️","👍"],
     description: 'Sends the view once media to the bot owner.',
     category: 'User',
     execute: async ({ sock, from, text, msg }) => {
