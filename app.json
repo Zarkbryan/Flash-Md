@@ -16,12 +16,12 @@
     },
     "OWNER_NUMBER": {
       "description": "Owner phone number (no + or country code)",
-      "value": "254742063632",
+      "value": "",
       "required": false
     },
     "OWNER_NAME": {
       "description": "Your name goes here",
-      "value": "FLASH-MD",
+      "value": "",
       "required": false
     },
     "SESSION": {
