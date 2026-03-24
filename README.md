@@ -7,7 +7,7 @@
 **FLASH-MD-V3** is a powerful, fully customizable WhatsApp bot built with **Node.js** and the **WhatsApp Web API**. Automate tasks, manage groups, and enhance your WhatsApp experience with ease.
 ## CONNECT TO WHATSAPP:
 - **STAR REPO AND THEN** [FORK IT](https://github.com/franceking1/Flash-Md-V2/fork) 
-- **GET SESSION ID USING** [FLASH-MD SESSIONS](https://flashv3sessions-766131578c33.herokuapp.com) 
+- **GET SESSION ID USING** [FLASH-MD SESSION 1](https://flashv3sessions-766131578c33.herokuapp.com) Or [FLASH-MD SESSION 2](https://flashv3.onrender.com)
 
 
 ### 🚀 Deployment Platforms:
